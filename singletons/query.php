@@ -86,12 +86,12 @@ class JSON_API_Query {
     }
   }
   
+  // legacy explanation:
+  // Used to test for get_magic_quotes_gpc()
+  //   and return stripslashes($value)
+  // Since php 5.4, this is no longer a valid test.
   function strip_magic_quotes($value) {
-    if (get_magic_quotes_gpc()) {
-      return stripslashes($value);
-    } else {
-      return $value;
-    }
+    return $value;
   }
   
   function query_vars($wp_vars) {
